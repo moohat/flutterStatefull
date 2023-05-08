@@ -27,12 +27,20 @@ class HomePage extends StatelessWidget {
           backgroundColor: Colors.teal,
           title: Text("Whatsapp"),
           bottom: TabBar(tabs: [
-            Icon(Icons.camera_alt),
-            Text("Chats"),
-            Text("Status"),
-            Text("Calls"),
+            Tab(
+              icon: Icon(Icons.camera_alt),
+            ),
+            Tab(text: "Chats"),
+            Tab(text: "Status"),
+            Tab(text: "Calls")
           ]),
         ),
+        body: TabBarView(children: [
+          Center(child: Text("CAMERA")),
+          Center(child: Text("Chats")),
+          Center(child: Text("Status")),
+          Center(child: Text("Calls")),
+        ]),
       ),
     );
   }
