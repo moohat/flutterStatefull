@@ -10,38 +10,51 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //hilangkan banner debug
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final List data = [
+    {
+    "judul": "pilihan ke - 1",
+    "data":1,
+    },
+    {
+    "judul": "pilihan ke - 2",
+    "data":2,
 
+    },
+    {
+    "judul": "pilihan ke - 3",
+    "data":3,
+
+    },
+  ];
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.teal,
-          title: Text("Whatsapp"),
-          bottom: TabBar(tabs: [
-            Tab(
-              icon: Icon(Icons.camera_alt),
-            ),
-            Tab(text: "Chats"),
-            Tab(text: "Status"),
-            Tab(text: "Calls")
-          ]),
-        ),
-        body: TabBarView(children: [
-          Center(child: Text("CAMERA")),
-          Center(child: Text("Chats")),
-          Center(child: Text("Status")),
-          Center(child: Text("Calls")),
-        ]),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("DropDown"),
       ),
+      body: Center(
+          child: Padding(
+        padding: EdgeInsets.all(30),
+        child: DropdownButton(
+          items: data
+              .map((e) => DropdownMenuItem(
+                    child: Text("tampilan - $e"),
+                    value: e.toString(),
+                  ))
+              .toList(),
+          onChanged: (value) {
+            print(value);
+          },
+        ),
+      )),
     );
   }
 }
