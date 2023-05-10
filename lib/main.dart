@@ -10,51 +10,64 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //hilangkan banner debug
-      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  final List data = [
-    {
-    "judul": "pilihan ke - 1",
-    "data":1,
-    },
-    {
-    "judul": "pilihan ke - 2",
-    "data":2,
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
-    },
-    {
-    "judul": "pilihan ke - 3",
-    "data":3,
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
 
-    },
+class _HomePageState extends State<HomePage> {
+  late int index;
+
+  List showWidget = [
+    Center(
+      child: Text("Home"),
+    ),
+    Center(
+      child: Text("Profile"),
+    ),
+    Center(
+      child: Text("Cart"),
+    ),
   ];
+  @override
+  void initState() {
+    index = 0;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("DropDown"),
+        title: Text("Bottom Navigation Bar"),
       ),
-      body: Center(
-          child: Padding(
-        padding: EdgeInsets.all(30),
-        child: DropdownButton(
-          items: data
-              .map((e) => DropdownMenuItem(
-                    child: Text("tampilan - $e"),
-                    value: e.toString(),
-                  ))
-              .toList(),
-          onChanged: (value) {
-            print(value);
+      body: showWidget[index],
+      bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.blue,
+          currentIndex: index,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.grey[20],
+
+          //mengatur ukuran icon
+          iconSize: 36,
+          onTap: (value) {
+            setState(() {
+              index = value;
+            });
           },
-        ),
-      )),
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "profile"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_cart), label: "Keranjang"),
+          ]),
     );
   }
 }
