@@ -15,59 +15,62 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  late int index;
-
-  List showWidget = [
-    Center(
-      child: Text("Home"),
-    ),
-    Center(
-      child: Text("Profile"),
-    ),
-    Center(
-      child: Text("Cart"),
-    ),
-  ];
-  @override
-  void initState() {
-    index = 0;
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bottom Navigation Bar"),
+        title: Text("Bottom Sheet"),
       ),
-      body: showWidget[index],
-      bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.blue,
-          currentIndex: index,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.grey[20],
-
-          //mengatur ukuran icon
-          iconSize: 36,
-          onTap: (value) {
-            setState(() {
-              index = value;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "profile"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_cart), label: "Keranjang"),
-          ]),
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.all(30),
+          child: ElevatedButton(
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                isDismissible: false,
+                builder: (context) => Container(
+                  height: 300,
+                  color: Colors.white,
+                  child: ListView(
+                    children: [
+                      ListTile(
+                        onTap: () => print("Klik Photo"),
+                        leading: Icon(Icons.photo),
+                        title: Text("Photo"),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.music_note_rounded),
+                        title: Text("Music"),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.video_collection),
+                        title: Text("Video"),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.share),
+                        title: Text("share"),
+                      ),
+                      ListTile(
+                        onTap: () => Navigator.pop(context),
+                        leading: Icon(Icons.cancel),
+                        title: Text("CANCEL"),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+            child: Text("SHow Bottom Sheet"),
+          ),
+        ),
+      ),
     );
   }
 }
