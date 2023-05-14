@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
-  runApp(MyApp());
+  runApp(MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,55 +22,153 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bottom Sheet"),
+        title: Text("Drawer"),
       ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(30),
-          child: ElevatedButton(
-            onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                isDismissible: false,
-                builder: (context) => Container(
-                  height: 300,
-                  color: Colors.white,
-                  child: ListView(
-                    children: [
-                      ListTile(
-                        onTap: () => print("Klik Photo"),
-                        leading: Icon(Icons.photo),
-                        title: Text("Photo"),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.music_note_rounded),
-                        title: Text("Music"),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.video_collection),
-                        title: Text("Video"),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.share),
-                        title: Text("share"),
-                      ),
-                      ListTile(
-                        onTap: () => Navigator.pop(context),
-                        leading: Icon(Icons.cancel),
-                        title: Text("CANCEL"),
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            },
-            child: Text("SHow Bottom Sheet"),
+      drawer: Drawer(
+          child: Column(
+        children: [
+          Container(
+            alignment: Alignment.bottomLeft,
+            padding: EdgeInsets.all(20),
+            width: double.infinity,
+            height: 150,
+            color: Colors.blue,
+            child: Text(
+              "Dashboard Menu",
+              style: TextStyle(fontSize: 22, color: Colors.white),
+            ),
           ),
-        ),
-      ),
+
+          //agar bisa scroll ke bawah, list view dibungkus expanded bukan container
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                ListTile(
+                  onTap: () {
+                    print("ke Halaman Home");
+                  },
+                  leading: Icon(Icons.home),
+                  title: Text("Home"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("ke Halaman Product");
+                  },
+                  leading: Icon(Icons.shopping_cart),
+                  title: Text("Product"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("ke Halaman setting");
+                  },
+                  leading: Icon(Icons.settings),
+                  title: Text("Setting"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+                ListTile(
+                  onTap: () {
+                    print("Ubah Profile");
+                  },
+                  leading: Icon(Icons.person),
+                  title: Text("Ubah Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined),
+                ),
+              ],
+            ),
+          )
+        ],
+      )),
     );
   }
 }
