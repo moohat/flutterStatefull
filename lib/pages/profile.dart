@@ -1,30 +1,52 @@
 import 'package:flutter/material.dart';
+import '../widgets/profile_picture.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Page Profile"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        backgroundColor: Colors.white,
+        //elevation untuk menghilangkan bayangan di bawah title
+        //0 = false
+        elevation: 0,
+        title: Row(
           children: [
-            Text("INI halaman Profile"),
-            SizedBox(
-              height: 30,
+            Text(
+              "MOOHAT",
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
             ),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: Text("<<<BACK")),
+            Icon(
+              Icons.keyboard_arrow_down_outlined,
+              color: Colors.black,
+            ),
           ],
         ),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.add_box_outlined,
+                color: Colors.black,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.menu,
+                color: Colors.black,
+              )),
+        ],
+      ),
+      body: ListView(
+        children: [
+          Row(
+            children: [ProfilePicture()],
+          )
+        ],
       ),
     );
   }
