@@ -26,12 +26,13 @@ class ProfilePicture extends StatelessWidget {
           width: 110,
           height: 110,
           decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage("https://picsum.photos/536/222"),
-                  fit: BoxFit.cover),
-              borderRadius: BorderRadius.circular(60),
-              color: Colors.blue,
-              border: Border.all(color: Colors.white, width: 5)),
+            color: Colors.grey[300],
+            image: DecorationImage(
+                image: NetworkImage("https://picsum.photos/536/280"),
+                fit: BoxFit.cover),
+            border: Border.all(color: Colors.white, width: 5),
+            borderRadius: BorderRadius.circular(60),
+          ),
         ),
       ],
     );

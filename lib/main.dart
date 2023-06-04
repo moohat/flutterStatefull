@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './pages/profile.dart';
 
+
 void main(List<String> args) {
   runApp(MyApp());
 }
