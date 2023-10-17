@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import './pages/profile.dart';
+import 'package:flutter_basic_4/DetailScreen.dart';
 
-
-void main(List<String> args) {
-  runApp(MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
+      title: 'Wisata Bandung',
+      theme: ThemeData(),
       debugShowCheckedModeBanner: false,
-      home: ProfilePage(),
+      home: const DetailScreen(),
     );
   }
 }
