@@ -5,6 +5,7 @@ import 'package:flutter_basic_4/expanded_flexible_page.dart';
 import 'package:flutter_basic_4/home_page.dart';
 import 'package:flutter_basic_4/my_custom_scroll_behavior.dart';
 import 'package:flutter_basic_4/rainbow.dart';
+import 'package:flutter_basic_4/responsive_page.dart';
 import 'package:flutter_basic_4/scrolling_screen.dart';
 
 void main() => runApp(const MyApp());
@@ -51,7 +52,8 @@ class MyApp extends StatelessWidget {
       // home: const Rainbow(),
       // home: const ExpandedFlexiblePage(),
       // home: FirstScreen(),
-      home: HomePage(),
+      // home: HomePage(),
+      home: ResponsivePage(),
     );
   }
 }
