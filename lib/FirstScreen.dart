@@ -25,25 +25,28 @@ class _FirstScreenState extends State<FirstScreen> {
     var myCheckBox = getCheckBox();
     var myImage = getImage();
     var myFont = getFont();
+    var myListView = getListView();
     return Scaffold(
         appBar: AppBar(
           title: const Text('First Screen'),
         ),
-        body: ListView(
-          children: [
-            Column(
-              children: [
-                mySwitch,
-                SizedBox(height: 15),
-                myPadding,
-                myRadio,
-                myCheckBox,
-                myImage,
-                myFont
-              ],
-            ),
-          ],
-        )
+        body: myListView
+        // ListView(
+        //   children: [
+        //     Column(
+        //       children: [
+        //         // mySwitch,
+        //         // SizedBox(height: 15),
+        //         // myPadding,
+        //         // myRadio,
+        //         // myCheckBox,
+        //         // myImage,
+        //         // myFont,
+        //         myListView
+        //       ],
+        //     ),
+        //   ],
+        // )
 
         //
 
@@ -244,6 +247,65 @@ class _FirstScreenState extends State<FirstScreen> {
         style:
             TextStyle(fontFamily: 'Oswald', fontSize: 100, color: Colors.blue),
       ),
+    );
+  }
+
+  getListView() {
+    return ListView(
+      children: <Widget>[
+        Container(
+          height: 250,
+          decoration: BoxDecoration(
+            color: Colors.grey,
+            border: Border.all(color: Colors.black),
+          ),
+          child: const Center(
+            child: Text(
+              '1',
+              style: TextStyle(fontSize: 50),
+            ),
+          ),
+        ),
+        Container(
+          height: 250,
+          decoration: BoxDecoration(
+            color: Colors.grey,
+            border: Border.all(color: Colors.black),
+          ),
+          child: const Center(
+            child: Text(
+              '2',
+              style: TextStyle(fontSize: 50),
+            ),
+          ),
+        ),
+        Container(
+          height: 250,
+          decoration: BoxDecoration(
+            color: Colors.grey,
+            border: Border.all(color: Colors.black),
+          ),
+          child: const Center(
+            child: Text(
+              '3',
+              style: TextStyle(fontSize: 50),
+            ),
+          ),
+        ),
+        Container(
+          height: 250,
+          decoration: BoxDecoration(
+            color: Colors.grey,
+            border: Border.all(color: Colors.black),
+          ),
+          child: const Center(
+            child: Text(
+              '4',
+              style: TextStyle(fontSize: 50),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

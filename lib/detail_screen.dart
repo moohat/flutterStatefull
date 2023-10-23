@@ -25,28 +25,28 @@ class DetailScreen extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 16.0),
+              margin: const EdgeInsets.symmetric(vertical: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Column(
+                  Column(                    
                     children: <Widget>[
                       const Icon(Icons.calendar_today),
-                      SizedBox(height: 8.0),
+                      const SizedBox(height: 8.0),
                       Text(
                         'Open Everyday',
                         style: informationTextStyle,
                       ),
                     ],
                   ),
-                  Column(
+                  const Column(
                     children: <Widget>[
                       Icon(Icons.access_time_outlined),
                       SizedBox(height: 8.0),
                       Text('09:00 - 20:00'),
                     ],
                   ),
-                  Column(
+                  const Column(
                     children: <Widget>[
                       Icon(Icons.monetization_on_rounded),
                       SizedBox(height: 8.0),
@@ -92,13 +92,19 @@ class DetailScreen extends StatelessWidget {
                       )),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                        'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                          'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                        'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                          'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),

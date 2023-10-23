@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_basic_4/FirstScreen.dart';
 import 'package:flutter_basic_4/detail_screen.dart';
 import 'package:flutter_basic_4/my_custom_scroll_behavior.dart';
+import 'package:flutter_basic_4/scrolling_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // agar bisa scroll horizontal di web,
-      scrollBehavior: MyCustomScrollBehavior(),
+      // scrollBehavior: MyCustomScrollBehavior(),
+
       title: 'Wisata Bandung',
       theme: ThemeData(
         fontFamily: 'Oswald',
@@ -40,8 +42,9 @@ class MyApp extends StatelessWidget {
       //     ],
       //   ),
       // ),
-      home: const DetailScreen(),
+      // home: const DetailScreen(),
       // home: const FirstScreen(),
+      home: const ScrollingScreen(),
     );
   }
 }
