@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic_4/first_screen.dart';
+import 'package:flutter_basic_4/pages/first_screen.dart';
 
 class SecondScreen extends StatelessWidget {
   final String message;

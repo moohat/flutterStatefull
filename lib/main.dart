@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic_4/first_screen.dart';
-import 'package:flutter_basic_4/detail_screen.dart';
-import 'package:flutter_basic_4/expanded_flexible_page.dart';
-import 'package:flutter_basic_4/home_page.dart';
-import 'package:flutter_basic_4/my_custom_scroll_behavior.dart';
-import 'package:flutter_basic_4/rainbow.dart';
-import 'package:flutter_basic_4/responsive_page.dart';
-import 'package:flutter_basic_4/scrolling_screen.dart';
+import 'package:flutter_basic_4/main_screen.dart';
+import 'package:flutter_basic_4/pages/my_custom_scroll_behavior.dart';
 
 void main() => runApp(const MyApp());
 
@@ -17,9 +11,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // agar bisa scroll horizontal di web,
-      // scrollBehavior: MyCustomScrollBehavior(),
+      scrollBehavior: MyCustomScrollBehavior(),
 
-      title: 'Wisata Bandung',
+      title: 'Wisata Bandung. Size: ${MediaQuery.of(context).size.width}',
       theme: ThemeData(
         fontFamily: 'Oswald',
         primarySwatch: Colors.blue,
@@ -53,7 +47,7 @@ class MyApp extends StatelessWidget {
       // home: const ExpandedFlexiblePage(),
       // home: FirstScreen(),
       // home: HomePage(),
-      home: ResponsivePage(),
+      home: MainScreen(),
     );
   }
 }

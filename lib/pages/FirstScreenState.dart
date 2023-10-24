@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic_4/FirstScreen.dart';
+import 'package:flutter_basic_4/pages/FirstScreen.dart';
 
 class _FirstScreenState extends State<FirstScreen> {
   String _name = '';
